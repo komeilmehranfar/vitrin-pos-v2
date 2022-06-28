@@ -43,7 +43,7 @@ export default class ComponentToPrint extends React.Component {
       pelateChar,
       ""
     );
-    let finalCost = order.final_price;
+    let finalCost = order.total_price;
     if (order.wallet_credit_used) finalCost = order.should_pay;
 
     return (
@@ -282,9 +282,9 @@ export default class ComponentToPrint extends React.Component {
                       whiteSpace: "pre-wrap",
                     }}
                   >
-                    {item.title}{" "}
-                    {item.variation_name &&
-                      `(${item.variation_name})`}
+                    {item.product_title}{" "}
+                    {item.variation_title !== item.product_title &&
+                      `(${item.variation_title})`}
                   </div>
                   <div
                     className="text-center u-fontWeightBold"
@@ -349,7 +349,7 @@ export default class ComponentToPrint extends React.Component {
                 className="u-fontWeightBold"
                 style={{ whiteSpace: "pre-wrap" }}
               >
-                {priceFormatter(order.total_initial_price)} تومان
+                {priceFormatter(order.total_items_initial_price)} تومان
               </span>
             </div>
             {order.total_discount_amount ? (

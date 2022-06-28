@@ -23,7 +23,7 @@ function OrderCard({
   businessTitle,
 }) {
   const {
-    final_price: totalPrice,
+    total_price: totalPrice,
     user_address: userAddress,
     submitted_at: createdAt,
     order_status: orderStatus,
@@ -115,7 +115,7 @@ function OrderCard({
                 : userAddress.address}
             </span>
           ) : null}
-          {order.final_price === 0 ? (
+          {order.total_price === 0 ? (
             <div className="d-flex" style={{ width: 35 }}>
               <span className="u-text-green mr-1">اعتبار هدیه</span>
             </div>

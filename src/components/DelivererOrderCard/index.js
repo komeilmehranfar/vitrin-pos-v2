@@ -13,7 +13,7 @@ import { ICONS } from "../../../assets/images/icons";
 
 function DelivererOrderCard({ order, link }) {
   const {
-    final_price: totalPrice,
+    total_price: totalPrice,
     user_address: userAddress,
     submitted_at: createdAt,
     order_status: orderStatus,
@@ -63,7 +63,7 @@ function DelivererOrderCard({ order, link }) {
           <span className="u-text-ellipse px-2 flex-1 text-right">
             {deliveryOnSite ? "تحویل در محل رستوران" : userAddress.address}
           </span>
-          {order.final_price === 0 ? (
+          {order.total_price === 0 ? (
             <div className="d-flex" style={{ width: 35 }}>
               <span className="u-text-green mr-1">اعتبار هدیه</span>
             </div>

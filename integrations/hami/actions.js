@@ -86,7 +86,7 @@ export const submitHamiOrder =async (order) => {
           ) * (localStorage.getItem("hamiCurrencyConvert") ? 10 : 1),
         Rounded: 0,
         Payable:
-          order.final_price *
+          order.total_price *
           (localStorage.getItem("hamiCurrencyConvert") ? 10 : 1),
         Remaining: 0,
         CommissionPrice: 0,
@@ -185,7 +185,7 @@ export const submitHamiOrder =async (order) => {
             ) * (localStorage.getItem("hamiCurrencyConvert") ? 10 : 1),
           Rounded: 0,
           Payable:
-            order.final_price *
+            order.total_price *
             (localStorage.getItem("hamiCurrencyConvert") ? 10 : 1),
           Remaining: 0,
           CommissionPrice: 0,
@@ -541,7 +541,7 @@ export const createOrUpdateHamiOrders = async (
         order.DeliveryPrice *
           (localStorage.getItem("hamiCurrencyConvert") ? 0.1 : 1)
       ),
-      _final_price: parseInt(
+      _total_price: parseInt(
         order.Payable * (localStorage.getItem("hamiCurrencyConvert") ? 0.1 : 1)
       ),
       _taxing_price: parseInt(

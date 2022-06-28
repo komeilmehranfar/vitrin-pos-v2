@@ -6,7 +6,7 @@ function PriceSection({ order }) {
   if (+order.delivery_price === 999999) cost = "خارج از محدوده ارسال";
   else if (+order.delivery_price !== 0)
     cost = `${priceFormatter(+order.delivery_price)}`;
-  let finalCost = order.final_price;
+  let finalCost = order.total_price;
   if (order.wallet_credit_used) finalCost = order.should_pay;
   return (
     <div className="py-2 u-relative u-background-white box-shadow u-border-radius-8 mr-4 mt-4">
@@ -14,7 +14,7 @@ function PriceSection({ order }) {
         <div className="d-flex flex-row justify-content-between mt-1">
           <span className="u-textBlack">قیمت اولیه: </span>
           <span className="u-text-darkest-grey">
-            {priceFormatter(order.total_initial_price)}
+            {priceFormatter(order.total_items_initial_price)}
             <span className="u-font-semi-small"> تومان</span>
           </span>
         </div>
@@ -95,7 +95,7 @@ function PriceSection({ order }) {
             <div className="d-flex flex-row justify-content-between mt-1">
               <span className="u-textBlack">مبلغ قابل پرداخت: </span>
               <span className="u-text-darkest-grey">
-                {priceFormatter(order.final_price)}
+                {priceFormatter(order.total_price)}
                 <span className="u-font-semi-small"> تومان</span>
               </span>
             </div>
