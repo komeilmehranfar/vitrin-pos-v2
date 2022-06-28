@@ -426,7 +426,7 @@ export default class ComponentToPrint extends React.Component {
                     className="u-fontWeightBold"
                     style={{ whiteSpace: "pre-wrap" }}
                   >
-                    {priceFormatter(order.final_price)} تومان
+                    {priceFormatter(order.total_price)} تومان
                   </span>
                 </div>
                 <div className="mt-1">
